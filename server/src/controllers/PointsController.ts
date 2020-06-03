@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { PointRequest } from '../utils/interfaces';
+import { imageDefault } from '../utils/constants';
 import knex from '../database/connection';
 
 
@@ -56,7 +57,7 @@ class PointsController{
         const trx = await knex.transaction();
 
         const point = {
-            image: 'image-fake',
+            image: imageDefault,
             name,
             email,
             whatsapp,
